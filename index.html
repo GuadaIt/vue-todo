@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue JS To-Do List</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+  <main id="app">
+
+    <h1>To-Do List</h1>
+
+    <todo-list 
+     @add-todo="addItem" 
+     :todos="todos" 
+     @delete="removeItem"
+     @mark="markDoneUndone"
+     >
+    </todo-list>
+  </main>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="first-vue.js"></script>
+</body>
+</html>
