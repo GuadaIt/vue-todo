@@ -28,13 +28,15 @@ h1 {
 }
 
 form {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 form input[type="text"] {
   height: 45px;
-  width: 300px;
+  width: 80%;
   font-size: 30px;
   padding-left: 8px;
   margin-right: 15px;
@@ -63,7 +65,7 @@ form input[type="submit"]:hover {
 ul {
   font-size: 25px;
   list-style: none;
-  padding: 40px 0;
+  padding: 40px 10px;
 }
 
 .li-container {
@@ -92,4 +94,13 @@ ul {
 
 .isDone {
   text-decoration: line-through;
+}
+
+@media (min-width: 700px) {
+  form {
+    width: auto;
+  }
+  form input[type="text"] {
+    width: 300px;
+  }  
 }
