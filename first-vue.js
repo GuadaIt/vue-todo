@@ -68,5 +68,22 @@ const app = new Vue({
     markDoneUndone(index) {
       this.todos[index].completed = !this.todos[index].completed
     }
+  },
+  mounted() {
+    if (localStorage.getItem('todos')) {
+      try {
+        this.todos = JSON.parse(localStorage.getItem('todos'))
+      } catch(e) {
+        localStorage.removeItem('todos')
+      }
+    }
+  },
+  watch: {
+    todos: {
+      handler() {
+        localStorage.setItem('todos', JSON.stringify(this.todos))
+      },
+      deep: true
+    }
   }
 })
